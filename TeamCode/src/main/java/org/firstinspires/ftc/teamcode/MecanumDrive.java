@@ -44,9 +44,9 @@ public class MecanumDrive extends LinearOpMode {
             double backLeftPower = (y - x + rx) / denominator;
             double frontRightPower = (y - x - rx) / denominator;
             double backRightPower = (y + x - rx) / denominator;
-            double leftArmPower = 0;
-            double rightArmPower = 0;
-            double armRotationPower = 0;
+            double leftArmPower = gamepad2.left_trigger;
+            double rightArmPower = gamepad2.right_trigger;
+            double armRotationPower = gamepad2.right_stick_y;
 
 
             frontLeftMotor.setPower(frontLeftPower);
@@ -57,6 +57,26 @@ public class MecanumDrive extends LinearOpMode {
             leftArmMotor.setPower(leftArmPower);
             rightArmMotor.setPower(rightArmPower);
             armRotator.setPower(armRotationPower);
+/*
+            double tgtPower = 0;
+            tgtPower = -this.gamepad1.left_stick_y;
+            motorTest.setPower(tgtPower);
+            // check to see if we need to move the servo.
+            if (gamepad1.y) {
+                // move to 0 degrees.
+                servoTest.setPosition(0);
+            } else if (gamepad1.x) {
+                // move to 135 degrees.
+                servoTest.setPosition(0.75);
+            }
+            telemetry.addData("Servo Position", servoTest.getPosition());
+            telemetry.addData("Target Power", tgtPower);
+            telemetry.addData("Motor Power", motorTest.getPower());
+            telemetry.addData("Status", "Running");
+            telemetry.update();
+
+ */
+
         }
 
         /*while (opModeIsActive()) {
@@ -70,6 +90,5 @@ public class MecanumDrive extends LinearOpMode {
             double  = (y2 + x2) / denominator;
             */
 
-        }
     }
 }
