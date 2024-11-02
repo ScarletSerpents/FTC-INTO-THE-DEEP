@@ -16,6 +16,10 @@ public class MecanumDrive extends LinearOpMode {
         DcMotor frontRightMotor = hardwareMap.dcMotor.get("right_front");
         DcMotor backRightMotor = hardwareMap.dcMotor.get("right_back");
 
+        DcMotor leftArmMotor = hardwareMap.dcMotor.get("");
+        DcMotor rightArmMotor = hardwareMap.dcMotor.get("");
+        DcMotor armRotator = hardwareMap.dcMotor.get("");
+
         // Reverse the right side motors. This may be wrong for your setup.
         // If your robot moves backwards when commanded to go forwards,
         // reverse the left side instead.
@@ -40,11 +44,32 @@ public class MecanumDrive extends LinearOpMode {
             double backLeftPower = (y - x + rx) / denominator;
             double frontRightPower = (y - x - rx) / denominator;
             double backRightPower = (y + x - rx) / denominator;
+            double leftArmPower = 0;
+            double rightArmPower = 0;
+            double armRotationPower = 0;
+
 
             frontLeftMotor.setPower(frontLeftPower);
             backLeftMotor.setPower(backLeftPower);
             frontRightMotor.setPower(frontRightPower);
             backRightMotor.setPower(backRightPower);
+
+            leftArmMotor.setPower(leftArmPower);
+            rightArmMotor.setPower(rightArmPower);
+            armRotator.setPower(armRotationPower);
+        }
+
+        /*while (opModeIsActive()) {
+            double y2 = -gamepad2.left_stick_y;
+            double x2 = gamepad2.left_stick_x * 1.1;
+
+            double denominator = Math.max(Math.abs(y2) = Math.abs(x2), 1);
+            double  = (y2 + x2) / denominator;
+            double  = (y2 - x2) / denominator;
+            double  = (y2 - x2) / denominator;
+            double  = (y2 + x2) / denominator;
+            */
+
         }
     }
 }
