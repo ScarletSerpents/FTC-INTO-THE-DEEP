@@ -25,7 +25,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-@Autonomous(name="Pushbot: Auto Drive By Time 1A 2021", group="Pushbot")
+@Autonomous(name="Auto Far", group="Pushbot")
 
 public class AutoFar extends LinearOpMode {
 
