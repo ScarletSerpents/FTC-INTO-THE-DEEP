@@ -104,7 +104,7 @@ public class NewTeleop extends LinearOpMode {
         if(gamepad2.left_bumper){
             target = 2700;
             intakeLeft.setPosition(.5);
-            intakeRight.setPosition(.5)
+            intakeRight.setPosition(.5);
         }
         if(gamepad2.right_trigger >= 0.5){
             intakeLeft.setPosition(wristPositions[1]);
